@@ -18,82 +18,84 @@ Perusahaan Jaya Jaya Maju menghadapi Tingkat attrition Rate yang tinggi melebihi
 
 ### Project Scope
 
-- Data preparation dan data cleaning awal
-- Exploratory Data Analysis (EDA) untuk mencari tahu faktor penyebab attrition rate yang tinggi melalui visualisasi data
-- Membuat business dashboard dari faktor penyebab tingginya attrition rate
-- Mengembangkan model machine learning untuk memprediksi status karyawan berdasarkan variabel-variabel faktor penyebab attrition
+- Melakukan pembersihan terhadap dataset (missing value, duplikat value, dll)
+- Menganalisis Data karyawan, dengan melakukan explorasi (EDA) untuk menemukan hal hal, faktor faktor yang sangat berkaitan dengan penyebab keluarnya karyawan
+- Membangun model prediktif menggunakan Machine Learning untuk memprediksi kemungkinan keluarnya karyawan
+- Membuat dashboard interaktif yang dapat memudahkan HR untuk memantau kondisi karyawan dan melihat hal hal yang mempengaruhi attrition rate
+- Merekomendasikan strategi yang efektif untuk perusahaan berdasarkan temuan yang didapat
 
 ### Preparation
 
-**Data source:** [Employee data](https://github.com/dicodingacademy/dicoding_dataset/tree/main/employee 'Dicoding GitHub - Employee data')
+**Sumber source:** [Employee data](https://github.com/dicodingacademy/dicoding_dataset/tree/main/employee 'Dicoding GitHub - Employee data')
+
+
 
 **Setup environment:**
-
-1. Clone this Repository
-   ```bash
-   git clone https://github.com/aNdr3W03/Employee-Attrition-Problem.git
+1. Prasyarat Tools
+   - Google Colab: [Google Colab](https://colab.research.google.com/)
+   - Google Looker Studio: [Looker](https://lookerstudio.google.com/u/0/navigation/reporting)
+2. Clone Repository\
+   Clone Repository 
    ```
-
-2. Create Python Virtual Environment
-   ```bash
-   virtualenv venv
+   git clone [https://github.com/dk1781/hremployeeattrition]
+   cd hremployeeattrition
    ```
-
-2. Activate the Environment
-   ```bash
-   venv\Scripts\activate
+3. Setup Google Colab
    ```
-
-4. Install All the Requirements Inside "requirements.txt"
-   ```bash
-   pip install -r requirements.txt
+   Python 3.11.12
    ```
+   Penggunaan Google Colab sudah menyediakan versi Python terbaru secara default, dan library yang akan digunakan sudah kompatibel, sehingga tidak perlu menginstall requirements.txt 
 
-**To run the Streamlit prediction:**
-```bash
-streamlit run streamlit_app.py
-```
+4. Setelah seluruh proses setup selesai, Anda bisa menjalankan skrip utama atau mulai melakukan proses prediksi.
+   - Untuk menjalankan analisis utama terdapat pada
+     ```
+     employeeattrition.ipynb
+     ```
+   - Untuk mencoba prediksi dapat memasukan data karyawan(ganti data dummy yang adda)
+     ```
+     python prediction.py
+     ```
+     File `prediction.py` ini perlu dijalankan dengan mencantumkan sekaligus file `best_model.pkl` dan `scaler.pkl` sebagai alat standarisasi data dummy.
 
-And to stop the streamlit application program by `ctrl + c`. 
 
 ## Business Dashboard
 
-[Jaya Jaya Maju Employees Dashboard](https://public.tableau.com/views/JayaJayaMajuEmployeesDashboard/Attrition 'Tableau Public- Jaya Jaya Maju Employees Dashboard'), didesain sefektif mungkin untuk memberikan insight kepada para manajer departemen HR terkait attrition rate yang cukup tinggi hingga lebih dari 10%. Dashboard ini juga didesain dengan visualisasi dan pemilihan warna yang inklusif bagi penderita color blind.
+Business Dashboard dirancang untuk membantu HR memantau faktor faktor yang mempengaruhi attrition rate karyawan.
+Dashboard ini berisi:
+1. Jumlah Karyawan yang ada di Perusahaan
 
-![Jaya Jaya Maju Employees Dashboard](https://github.com/user-attachments/assets/0b6e67e1-8f07-48fd-b024-a4eb207dee55 'Jaya Jaya Maju Employees Dashboard')
+   Dimana Perusahaan Jaya jaya maju memiliki 1058 Karyawan
+2. Rata rata Gaji Perbulan Karyawan
 
-Pada dashboard ini, terdapat 3 kolom, kolom pertama menunjukkan analisis dari distribusi jenis kelamin, status pernikahan, dan tingkat pendidikan yang telah ditempuh para pegawai. Pada kolom kedua menunjukkan grafik analisis attrition rate berdasarkan umur, peran pekerjaan dan keterlibatan pekerjaan. Sedangkan pada kolom ketiga terdapat jumlah attrition rate, rata-rata jumlah tahun berkerja setiap pegawai, rata-rata pendapatan pegawai, dan bubble chart jumlah attrition rate berdasarkan tingkat work life balance dan tingkat kepuasan kerja.
+   Gaji rata rata Karyawan di perusahaan ini adalah $6,625.95
+3. Attrition rate
 
-> Dari **pie chart jenis kelamin**, pekerja laki-laki lebih banyak, sebanyak 620 (58.60%) pekerja laki-laki dan 438 (41.40%) pekerja perempuan.  
-> Dari **pie chart status pernikahan**, pekerja yang telah menikah sebanyak 464 (43.86%), sebanyak 352 (33.27%) pekerja yang belum menikah, dan sebanyak 242 (22.87%) pekerja yang bercerai.  
-> Sedangkan dari **pie chart tingkat pendidikan**, pekerja yang belum kuliah sebanyak 131 (12.38%), pekerja yang sedang kuliah sebanyak 208 (19.66%), pekerja yang sudah sarjana sebesar 410 (38.75%), pekerja yang sudah magister sebesar 276 (26.09%), dan pekerja yang sudah doktor sebesar 33 (3.12%).  
+   Attritionn rate karyawan adalah sebesar 16,9%
+4. Attrition by Marital Status
 
-> Berdasarkan **grafik atrrition rate dengan usia**, jumlah pegawai yang melakukan attrition paling banyak terjadi pada usia 19 tahun, dan pada usia dua puluhan dan tiga puluhan. Sedangkan attrition rate paling tinggi terjadi pada usia 31 tahun. Dan pegawai pada usia lima puluhan seperti 53, 54, 57, 59 justru lebih memilih untuk bertahan di perusahaannya.  
-> Berdasarkan **grafik attrition rate dengan peran pekerjaan**, jumlah pegawai yang melakukan attrition paling tinggi adalah mereka yang memiliki peran Laboratory Technician, sedangkan yang paling sedikit adalah mereka yang memiliki peran Research Director. Selain itu, pegawai yang memiliki peran Sales Representative memiliki attrition rate yang cukup tinggi yaitu hampir mendekati populasi secara keseluruhan.  
-> Berdasarkan **grafik attrition rate dengan keterlibatan pekerjaan**, pegawai yang memiliki keterlibatan pekerjaan rendah memiliki kecenderungan melakukan attrition yang terlihat jelas mendekati populasi secara keseluruhan.  
+   Karyawan yang berstatus single memiliki angka attrition tertinggi
+5. Employee Age Impact to Attrition
 
-> Dari **grafik work life balance**, pekerja yang memiliki attrition rate tertinggi datang dari pekerja dengan worklife balance paling rendah, yaitu sebesar 32.14% pekerja yang memiliki worklife balance rendah, yaitu 18 pekerja yang melakukan attrition, dan 38 pekerja yang tidak melakukannya. Sedangkan pekerja yang memiliki work life balance sangat tinggi justru menduduki di peringkat ke-2 dengan attrition rate tertinggi setelah work life balance rendah, yaitu sebesar 19.47% dengan 22 pekerja yang melakukan attrition dan 91 pekerja yang tidak.  
-> Dari **grafik kepuasan kerja**, pekerja yang memiliki attrition rate tertinggi juga datang dari pekerja dengan tingkat kepuasan kerja yang rendah, yaitu sebesar 22.4% dengan 46 pekerja yang melakukan attrition dan 159 pekerja yang tidak melakukannya. Sedangkan pekerja dengan tingkat kepuasan kerja paling tinggi adalah pekerja dengan tingkat attrition paling rendah, yaitu 11.47%, sebesar 39 pekerja yang melakukan attrition dan 301 pekerja yang tidak.  
+   Angka attrition berbanding terbalik dengan usia karyawan karyawan yang lebih tua cenderung tidak meninggalkan perusahaan akan tetapi karyawan yang masih muda terutama pada rentang usia 26-35 memiliki angka attrition tertinggi
+6. Total Working Year Impact to Attrition
 
-> [!NOTE]
-> Video singkat penjelasan business dashboard dan kesimpulannya dapat dilihat pada [link YouTube ini](https://youtu.be/KrT6mdZUXig 'Jaya Jaya Maju Business Dashboard').
+   Begitu pula halnya dengan Total working Year sama halnya sseperti usia, semakin lamanya pengalman bekerja karyawan semakin rendah angka attrtionnya
+7. Attrition By Job Level
+
+   Karyawan dengan job level rendah cenderung keluar dari perusahaan
+8. Overtime Impact to Attrition
+
+   Over time atau lembur menjadi hal yang paling berpengaruh pada kemungkinan keluarnya karyawan karena sebanyak 54,7% karywan yang melakukan lembur cenderung meninggalkna perusahaan(attrition)
+
+> Link [Dashboard](https://lookerstudio.google.com/reporting/803a21c7-2489-4dd3-bd17-1c5ff500e1f5)
 
 ## Conclusion
 
-Berikut adalah beberapa poin penting yang bisa ditarik menjadi kesimpulan:
-- **Demografi Karyawan**: Mayoritas pekerja adalah laki-laki (58.6%), dengan sebagian besar telah menikah (43.86%) dan berpendidikan sarjana (38.75%).
-- **Attrition Rate Berdasarkan Usia**: Pekerja dengan usia 19-30 tahun memiliki tingkat attrition tertinggi, dengan puncak pada usia 31 tahun. Pekerja usia 50-an cenderung lebih memilih untuk bertahan.
-- **Attrition Berdasarkan Peran**: Posisi sebagai Laboratory Technician menunjukkan tingkat attrition tertinggi, sementara Research Director memiliki attrition terendah.
-- **Keterlibatan Kerja**: Karyawan dengan tingkat keterlibatan rendah memiliki kecenderungan untuk melakukan attrition lebih tinggi.
-- **Work-Life Balance**: Karyawan dengan work-life balance rendah memiliki tingkat attrition tertinggi, diikuti oleh mereka dengan work-life balance sangat tinggi.
-- **Kepuasan Kerja**: Karyawan dengan tingkat kepuasan kerja rendah menunjukkan tingkat attrition tertinggi, sementara mereka dengan kepuasan kerja tinggi memiliki tingkat attrition terendah.
+Melalui proses analisis terdapat beberapa faktor yang mempengaruhi tingginya attrition rate pada perusahaan jaya jaya maju. Faktor faktor yang sangat mempengaruhi keluarnya karyawan dari perusahaan ialah Lembur, Usia, Lamanya pengalaman bekerja, Tingkat pekerjaan, dan Status pernikahan. Model machine learning yang dibangun dapat meprediksi kemungkinan keluarnya karyawan lewat fitur fitur yang dimasukan dan mendapatkan tingkat akurasi yang baik  sehingga dapat membantu perusahaan untuk melakukan langkah preventif terhadap karyawan yang memiliki chance keluar tinggi. Kemudian dashboard interaktif memberikan visualisasi yang jelas sangat berguna bagi HR untuk memantau kondisi karyawan dan memahami aspek aspek yang perlu diberi perhatian lebih. 
 
 ### Recommended Action Items
 
 Berikut beberapa rekomendai yang dapat dilakukan oleh perusahaan untuk mengatasi permasalahan attrition rate:
-- Mengenai kerterlibatan pekerja, penting untuk menciptakan lingkungan kerja yang lebih inklusif dan berorientasi pada perkembangan karier.
-- Evaluasi dan tingkatkan kebijakan kerja fleksibel, sebab pekerja dengan work-life balance rendah memiliki tingkat attrition yang relatif tinggi agar dapat menjaga keseimbangan dan dapat membantu mengurangi tingkat perputaran karyawan.
-- Fokus pada peningkatan kepuasan kerja dengan memberikan lebih banyak umpan balik positif, pengakuan atas pencapaian, serta peluang untuk meningkatkan kesejahteraan karyawan.
-- Mengingat attrition rate yang tinggi di usia 19-30 tahun, perusahaan bisa membuat program khusus untuk mempertahankan karyawan muda, seperti mentorship, peluang pengembangan karier cepat, atau pengakuan atas kontribusi mereka.
-- Lakukan pemantauan berkelanjutan terhadap attrition rate dan lakukan deep analysis untuk mengidentifikasi trend dan faktor-faktor risiko lebih dini. Hal ini akan memungkinkan perusahaan untuk mengantisipasi potensi masalah dan mengambil tindakan preventif.
-- Prediksi apakah pekerja memiliki kemungkinan untuk melakukan attrition, dapat dilakukan melalui website prediksi [berikut ini](https://employee-attrition-predict.streamlit.app 'Jaya Jaya Maju Employee Attrition Prediction').
+- Evaluasi mengenai kebijakan Lembur pada perusahaan bisa seperti batasi jam lemburnya atau memberi upah yang lebih banyak
+- Memberikan jenajang karir yang jelas terhadap karyawan agar tidak banyak karyawan dilevel bawah yang meninggalkan perusahaan
+- Monitor selalu kondisi karyawan dan lakukan langkah preventif jika karyawan itu memiliki chance untuk meninggalkan perusahaan
