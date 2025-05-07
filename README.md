@@ -93,7 +93,7 @@ Dashboard ini berisi:
 
 Melalui proses analisis terdapat beberapa faktor yang mempengaruhi tingginya attrition rate pada perusahaan jaya jaya maju. Faktor faktor yang sangat mempengaruhi keluarnya karyawan dari perusahaan ialah Lembur, Usia, Lamanya pengalaman bekerja, Tingkat pekerjaan, dan Status pernikahan. Model machine learning yang dibangun dapat meprediksi kemungkinan keluarnya karyawan lewat fitur fitur yang dimasukan dan mendapatkan tingkat akurasi yang baik  sehingga dapat membantu perusahaan untuk melakukan langkah preventif terhadap karyawan yang memiliki chance keluar tinggi. Kemudian dashboard interaktif memberikan visualisasi yang jelas sangat berguna bagi HR untuk memantau kondisi karyawan dan memahami aspek aspek yang perlu diberi perhatian lebih. 
 
-### Recommended Action Items
+### Rekomendasi Action Items
 
 Berikut beberapa rekomendai yang dapat dilakukan oleh perusahaan untuk mengatasi permasalahan attrition rate:
 - Evaluasi mengenai kebijakan Lembur pada perusahaan bisa seperti batasi jam lemburnya atau memberi upah yang lebih banyak
