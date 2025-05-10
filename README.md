@@ -11,9 +11,10 @@ Untuk mencegah hal ini semakin parah, manajer departemen HR ingin mengidentifika
 
 Perusahaan Jaya Jaya Maju menghadapi Tingkat attrition Rate yang tinggi melebihi 10%. Dikhawatirkan jika Faktor yang mempengerahi tingginya attrition rate tersebut tidak ditemukan secepatnya akan berpengaruh terhadap bertambahnya karyawan yang akan keluar dari perusahaan. Maka darri itu diperlukan :
 
-1. Menganalisis fitur/faktor yang apa yang paling mempengaruhi terhadap Attrition rate karyawan
-2. Membuat visualisasi yang interaktif dan mudah dipahami oleh HR
-3. Membuat model prediksi untuk memprediksi lebih awal apakah karyawan tersebut akan keluar atau tidak
+- Faktor apa saja yang sangat berpengaruh terhadap keputusan karyawan meninggalkan perusahaan?
+- Bagaimana Caranya HR dapat dengan mudah memantau faktor faktor resiko tersebut melalui visualisasi?
+- Bagaimana cara memprediksi karyawan yang berkemungkinan besar keluar lebih awal memlalui faktor resiko yang didapat sebelumnya?
+
 
 
 ### Project Scope
@@ -91,7 +92,9 @@ Dashboard ini berisi:
 
 ## Conclusion
 
-Melalui proses analisis terdapat beberapa faktor yang mempengaruhi tingginya attrition rate pada perusahaan jaya jaya maju. Faktor faktor yang sangat mempengaruhi keluarnya karyawan dari perusahaan ialah Lembur, Usia, Lamanya pengalaman bekerja, Tingkat pekerjaan, dan Status pernikahan. Model machine learning yang dibangun dapat meprediksi kemungkinan keluarnya karyawan lewat fitur fitur yang dimasukan dan mendapatkan tingkat akurasi yang baik  sehingga dapat membantu perusahaan untuk melakukan langkah preventif terhadap karyawan yang memiliki chance keluar tinggi. Kemudian dashboard interaktif memberikan visualisasi yang jelas sangat berguna bagi HR untuk memantau kondisi karyawan dan memahami aspek aspek yang perlu diberi perhatian lebih. 
+Melalui proses analisis terdapat beberapa faktor yang mempengaruhi tingginya attrition rate pada perusahaan jaya jaya maju. Faktor faktor yang sangat mempengaruhi keluarnya karyawan dari perusahaan ialah Lembur dimana 54% karyawan yang melakukan lembur cenderung meninggalkan perusahaan,Kemudian yang kedua ada Usia karyawan yang berusia masih muda juga cenderung keluar dari perusahaan hal ini berkesinambungan juga dengan lamanya pengalaman bekerja dimana karyawan dengan pengalaman kerja yang tinggi cenderung tidak meninggalkan perusahaan, Selanjutnya adalah tingkat pekerjaan semakin rendah tingkat pekerjaan karyawan semakin besar kemungkina karyawan tersebut keluar dari perusahaan, dan yang terakhir ada Status pernikahan walaupun tidak seberpengaruh faktor yang sebelumnya disebutkan status pernikahan karyawan juga ternyata cukup berpengaruh terhadap kemungkinan keluarnya karyawan dimana karyawan yang berstatus singlelah yang berkemungkinan besar untuk keluar dari perusahaan jaya jaya maju. 
+
+Model machine learning yang dibangun dapat meprediksi kemungkinan keluarnya karyawan lewat fitur fitur yang dimasukan dan mendapatkan tingkat akurasi yang baik sehingga dapat membantu perusahaan untuk melakukan langkah preventif terhadap karyawan yang memiliki chance keluar tinggi. Kemudian dashboard interaktif memberikan visualisasi yang jelas sangat berguna bagi HR untuk memantau kondisi karyawan dan memahami aspek aspek yang perlu diberi perhatian lebih. Melalui model machine lernign dan dashboard interaktif HR akan mudah melakukan tindakan prepentif dan memantau karyawan sehingga dapat menurunkan attrition rate pada perusahaan
 
 ### Rekomendasi Action Items
 
